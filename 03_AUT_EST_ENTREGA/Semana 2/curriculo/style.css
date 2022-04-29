@@ -1,0 +1,17 @@
+img {
+    border-radius: 100%;
+}
+
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+#azul {
+    padding: 30px;
+}
+body{
+    background-image: linear-gradient(rgb(0, 0, 255), lightblue);
+    min-height: 100vh;
+    height: 100%;
+}
