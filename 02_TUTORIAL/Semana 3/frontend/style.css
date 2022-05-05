@@ -49,3 +49,7 @@ button {
 .button-calc{
 	background-color: #547aa5;
 }
+
+#resultado{
+	font-size:xx-large;
+}
