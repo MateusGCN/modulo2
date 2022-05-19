@@ -1,4 +1,3 @@
-
 const express = require('express'); 
 const app = express();
 
@@ -40,4 +39,8 @@ app.post('/userinsert', urlencodedParser, (req, res) => {
   });
   db.close();
   res.end();
+});
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
