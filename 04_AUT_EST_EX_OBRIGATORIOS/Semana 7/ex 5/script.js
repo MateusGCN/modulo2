@@ -32,15 +32,12 @@ function calc(){
     maiortrabalho=Math.max(...ntrabalho)
     menortrabalho=Math.min(...ntrabalho)
 
-
-    console.log(nprova)
-    console.log(ntrabalho)
-    console.log(mediasinviduais)
-    console.log(mediageral)
-    console.log(mediaprova)
-    console.log(mediatrabalho)
-    console.log(maiorprova)
-    console.log(menorprova)
-    console.log(maiortrabalho)
-    console.log(menortrabalho)
+    document.getElementById("mediaindividual").innerHTML=(mediasinviduais)
+    document.getElementById("mediageral").innerHTML=(mediageral)
+    document.getElementById("mediaprova").innerHTML=(mediaprova)
+    document.getElementById("mediatrabalho").innerHTML=(mediatrabalho)
+    document.getElementById("maiorprova").innerHTML=(maiorprova)
+    document.getElementById("menorprova").innerHTML=(menorprova)
+    document.getElementById("maiortrabalho").innerHTML=(maiortrabalho)
+    document.getElementById("menortrabalho").innerHTML=(menortrabalho)
 }

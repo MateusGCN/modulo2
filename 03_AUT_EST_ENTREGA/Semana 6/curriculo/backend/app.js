@@ -60,6 +60,13 @@ async function deletedata() {
   })
 }
 
+async function updatedata(item) {
+  return openDb().then((db) => {
+    db.run("UPDATE Dados SET name=?, age=?, modulo=?, modulodate=? WHERE id=? ", [
+      item.newName, item.newAge, item.newModulo, item.newDate, item.id
+    ])
+  })
+}
 
 app.route("/api")
   .get(async (req, res) => {
@@ -71,6 +78,11 @@ app.route("/api")
     let data = await insertdata({
       name: "Mateus Neves", age: "18 anos", modulo: "modulo 2", modulodate: Date.now()
     });
+    res.send(data)
+  })
+
+  .put(async (req, res) => {
+    let data = await updatedata(req.body)
     res.send(data)
   })
 
