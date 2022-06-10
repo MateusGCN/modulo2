@@ -17,10 +17,11 @@ async function createDatabase() {
     db.exec(
       `CREATE TABLE IF NOT EXISTS Dados( 
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        age TEXT,
+        project TEXT,
+        partner TEXT,
         modulo TEXT,
-        modulodate DATE
+        projectstart DATE,
+        projectend DATE
       )`
     );
   })
@@ -48,8 +49,8 @@ async function getdata() {
 }
 async function insertdata(iten) {
   return openDb().then((db) => {
-    db.run("INSERT INTO Dados (name, age, modulo, modulodate) VALUES (?,?,?,?)", [
-      iten.name || " ", iten.age || " ", iten.modulo || " ", iten.modulodate || " "
+    db.run("INSERT INTO Dados (project, partner, modulo, projectstart, projectend) VALUES (?,?,?,?,?)", [
+      iten.project || " ", iten.partner || " ", iten.modulo || " ", iten.projectstart || " ", iten.projectend || ""
     ])
   })
 }
@@ -62,8 +63,8 @@ async function deletedata() {
 
 async function updatedata(item) {
   return openDb().then((db) => {
-    db.run("UPDATE Dados SET name=?, age=?, modulo=?, modulodate=? WHERE id=? ", [
-      item.newName, item.newAge, item.newModulo, item.newDate, item.id
+    db.run("UPDATE Dados SET project=?, partner=?, modulo=?, projectstart=?, projectend=? WHERE id=? ", [
+      item.newProject, item.newPartner, item.newModulo, item.Projectstart, item.Projectend, item.id
     ])
   })
 }

@@ -16,16 +16,19 @@ const getDados = () => {
              ${aluno.id}
              </td>
              <td>
-             ${aluno.name}
+             ${aluno.project}
              </td>
              <td>
-             ${aluno.age}
+             ${aluno.partner}
              </td>
              <td>
              ${aluno.modulo}
              </td>
              <td>
-             ${aluno.modulodate}
+             ${aluno.projectstart}
+             </td>
+             <td>
+             ${aluno.projectend}
              </td>
              </tr>
             `
@@ -38,23 +41,24 @@ const getDados = () => {
 getDados()
 
 function adicionar() {
-    let nameAluno = document.getElementById("name")
-    let ageAluno = document.getElementById("age")
+    let projectAluno = document.getElementById("project")
+    let partnerAluno = document.getElementById("partner")
     let moduloAluno = document.getElementById("modulo")
-    let moduloDateAluno = document.getElementById("modulodate")
+    let projectstartAluno = document.getElementById("start")
+    let projectendAluno = document.getElementById("end")
 
     const postDados = () => {
         let dadoaluno = {
-            name: nameAluno.value,
-            age: ageAluno.value,
+            project: projectAluno.value,
+            partner: partnerAluno.value,
             modulo: moduloAluno.value,
-            modulodate: moduloDateAluno.value,
+            projectend: projectendAluno.value,
+            projectstart: projectstartAluno.value,
         };
+        console.log(dadoaluno)
         axios.post(url + "/api", dadoaluno).then((i) => {
             window.location.reload()
         })
     }
     postDados()
-    console.log(nameAluno.value)
-
 }
